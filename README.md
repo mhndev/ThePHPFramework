@@ -1,6 +1,6 @@
 # ThePHPFramework
 a pretty simple and educational php framework
-
+(it's under development and not complete yet.)
 by developing this php micro framework I have 2 intention:
 
 1. educational. so it should be as simple as possible. by that I mean even an new php developer who has started learning php
