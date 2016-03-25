@@ -23,3 +23,9 @@ I don't know why most well known php frameworks are not implementing all psr con
  
 because all these services should share an interface.
 which it is possible to write your php application without using a php framework.
+
+in this framework you'll see a psr directory which absolutely should have psr interfaces.
+but it hasn't already because it would make it complex which I don't want it to be complex.
+
+maybe in future I make switch them with psr interfaces.
+for now just assume they're reall psr interfaces :)
