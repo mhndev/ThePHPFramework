@@ -14,7 +14,13 @@ class Http
 
     public function createRequestFromGlobals()
     {
-        return new Request();
+        return new Request([
+            'method'         => $_SERVER['REQUEST_METHOD'],
+            'uri'            => $_SERVER['REQUEST_URI'],
+            'cookies'        => $_COOKIE,
+            'serverParams'   => $_SERVER,
+            'files'          => $_FILES
+        ]);
     }
 
 }

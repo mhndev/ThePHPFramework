@@ -1,0 +1,19 @@
+{
+    "name": "mhndev/thephpframework",
+    "description": "a pretty simple and educational php framework",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "mhndev",
+            "email": "majid8911303@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "mhndev\\": "services/"
+        }
+    },
+
+    "minimum-stability": "stable",
+    "require": {}
+}
