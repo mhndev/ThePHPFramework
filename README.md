@@ -27,5 +27,6 @@ which it is possible to write your php application without using a php framework
 in this framework you'll see a psr directory which absolutely should have psr interfaces.
 but it hasn't already because it would make it complex which I don't want it to be complex.
 
+other than complexity psr interfaces are not complete yet. so I chose to use my own psr interfaces for now.
 maybe in future I make switch them with psr interfaces.
 for now just assume they're reall psr interfaces :)
