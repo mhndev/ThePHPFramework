@@ -37,7 +37,8 @@ class Kernel
      * @var Router
      */
     protected $router;
-
+    
+    
     /**
      * @var Dispatcher
      */
@@ -81,7 +82,8 @@ class Kernel
         if(!empty($this->middlewares['before']))
             $request = $this->runThroughBeforeMiddleWares($this->middlewares['before']);
 
-        $this->response = $this->dispatcher->dispatch($request, $this->matchedRoute);
+
+        $this->response = $this->dispatcher->dispatch($request, $this->matchedRoute, $this->routes);
 
         if(!empty($this->middlewares['after']))
             $this->response = $this->runThroughAfterMiddleWares($this->middlewares['after']);

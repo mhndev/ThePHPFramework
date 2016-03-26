@@ -29,9 +29,6 @@ $request = $httpService->createRequestFromGlobals();
 $kernel = $container->get('kernel');
 
 
-include APP_PATH."routes.php";
-
-
 /** @var \mhndev\http\Response $response */
 $response = $kernel->run($request);
 

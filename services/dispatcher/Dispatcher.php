@@ -14,17 +14,14 @@ use mhndev\router\Route;
 class Dispatcher
 {
 
-    protected $controllersPath;
+    protected $routes;
 
-    protected $viewsPath;
-
-
-    public function bootstrap(array $data)
+    
+    public function __construct(array $routes)
     {
-
+        $this->routes = $routes;
     }
-
-
+    
     public function dispatch(Request $request, Route $route)
     {
         return new Response();

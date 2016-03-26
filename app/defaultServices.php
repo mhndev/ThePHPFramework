@@ -10,7 +10,7 @@ $container->set('router', function($c){
 });
 
 $container->set('dispatcher', function($c){
-    return new \mhndev\dispatcher\Dispatcher();
+    return new \mhndev\dispatcher\Dispatcher(include APP_PATH.'routes.php');
 });
 
 
