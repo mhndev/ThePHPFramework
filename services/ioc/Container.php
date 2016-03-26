@@ -15,6 +15,13 @@ class Container
      */
     protected $services;
 
+    protected $settings;
+
+
+    public function __construct(array $data)
+    {
+        $this->settings = $data;
+    }
 
     public function get($service)
     {

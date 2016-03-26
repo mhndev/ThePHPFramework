@@ -4,15 +4,19 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 
-defined('ROOT_PATH') or define('ROOT_PATH', dirname(__FILE__));
-defined("APP_PATH") or define("APP_PATH", dirname(__FILE__).'/app');
+defined('ROOT_PATH') || define("ROOT_PATH", realpath(dirname(__FILE__).'/../'));
+defined("APP_PATH") || define("APP_PATH", realpath(dirname(__FILE__).'/../app/'));
 
 
-require_once 'vendor/autoload.php';
+require_once '../vendor/autoload.php';
 
-$container = new \mhndev\ioc\Container();
 
-include "defaultServices.php";
+$settings = require APP_PATH. 'settings.php';
+$container = new \mhndev\ioc\Container($settings);
+
+
+
+include APP_PATH."defaultServices.php";
 
 
 /** @var \mhndev\http\Http $httpService */
@@ -25,7 +29,7 @@ $request = $httpService->createRequestFromGlobals();
 $kernel = $container->get('kernel');
 
 
-include "routes.php";
+include APP_PATH."routes.php";
 
 
 /** @var \mhndev\http\Response $response */
