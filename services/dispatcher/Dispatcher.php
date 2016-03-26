@@ -14,6 +14,17 @@ use mhndev\router\Route;
 class Dispatcher
 {
 
+    protected $controllersPath;
+
+    protected $viewsPath;
+
+
+    public function bootstrap(array $data)
+    {
+
+    }
+
+
     public function dispatch(Request $request, Route $route)
     {
         return new Response();

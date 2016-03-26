@@ -4,6 +4,10 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 
+defined('ROOT_PATH') or define('ROOT_PATH', dirname(__FILE__));
+defined("APP_PATH") or define("APP_PATH", dirname(__FILE__).'/app');
+
+
 require_once 'vendor/autoload.php';
 
 $container = new \mhndev\ioc\Container();
