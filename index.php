@@ -20,6 +20,10 @@ $request = $httpService->createRequestFromGlobals();
 /** @var \mhndev\http_kernel\Kernel $kernel */
 $kernel = $container->get('kernel');
 
+
+include "routes.php";
+
+
 /** @var \mhndev\http\Response $response */
 $response = $kernel->run($request);
 

@@ -15,12 +15,21 @@ class Kernel
 {
 
 
+    /**
+     * @var
+     */
     protected $matchedRoute;
 
 
+    /**
+     * @var
+     */
     protected $request;
 
 
+    /**
+     * @var
+     */
     protected $response;
 
 
@@ -104,6 +113,54 @@ class Kernel
 
         return $response;
     }
+
+
+    /**
+     * Proxy call to router get method
+     * @param $pattern
+     * @param $callable
+     */
+    public function get($pattern, $callable)
+    {
+
+    }
+
+    public function post($pattern, $callable)
+    {
+
+    }
+
+
+    public function put($pattern, $callable)
+    {
+
+    }
+
+
+    public function delete($pattern, $callable)
+    {
+
+    }
+
+
+
+    public function patch($pattern, $callable)
+    {
+
+    }
+
+
+    public function options($pattern, $callable)
+    {
+
+    }
+
+
+    public function any($pattern, $callable)
+    {
+
+    }
+
 
 
 }
