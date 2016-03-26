@@ -7,8 +7,6 @@
  */
 namespace mhndev\http;
 
-use mhndev\ioc\Request;
-
 class Http
 {
 

@@ -7,8 +7,8 @@
  */
 namespace mhndev\dispatcher;
 
-use mhndev\ioc\Request;
-use mhndev\ioc\Response;
+use mhndev\http\Request;
+use mhndev\http\Response;
 use mhndev\router\Route;
 
 class Dispatcher

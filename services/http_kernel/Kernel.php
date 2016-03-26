@@ -8,7 +8,7 @@
 namespace mhndev\http_kernel;
 
 use mhndev\dispatcher\Dispatcher;
-use mhndev\ioc\Request;
+use mhndev\http\Request;
 use mhndev\router\Router;
 
 class Kernel
@@ -59,17 +59,23 @@ class Kernel
         $this->dispatcher = $dispatcher;
     }
 
+    /**
+     * @param Request $request
+     * @return mixed
+     */
     public function run(Request $request)
     {
         $this->request = $request;
 
         $this->matchedRoute = $this->router->match($request);
 
-        $request = $this->runThroughBeforeMiddleWares($this->middlewares['before']);
+        if(!empty($this->middlewares['before']))
+            $request = $this->runThroughBeforeMiddleWares($this->middlewares['before']);
 
         $this->response = $this->dispatcher->dispatch($request, $this->matchedRoute);
 
-        $this->response = $this->runThroughAfterMiddleWares($this->middlewares['after']);
+        if(!empty($this->middlewares['after']))
+            $this->response = $this->runThroughAfterMiddleWares($this->middlewares['after']);
 
         return $this->response;
     }
@@ -77,7 +83,6 @@ class Kernel
 
     public function runThroughBeforeMiddleWares(array $middlewares)
     {
-
         $request = $this->request;
 
         foreach($middlewares as $middleware){

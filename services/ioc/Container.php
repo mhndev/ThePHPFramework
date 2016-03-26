@@ -18,21 +18,12 @@ class Container
 
     public function get($service)
     {
-        if($this->services[$service]['type'] == 'normal'){
-            return new $this->services[$service];
-        }else{
-            return $this->services[$service]['object'];
-        }
+        return $this->services[$service];
     }
 
-    public function set($serviceName, $service, $serviceType='normal', $class = null)
+    public function set($service, Callable $callable)
     {
-        $this->services[$serviceName]['object'] = $service;
-        $this->services[$serviceName]['type'] = $serviceType;
-
-        if($serviceType == 'normal'){
-            $this->services[$serviceName]['class'] = $class;
-        }
+        $this->services[$service] = call_user_func($callable, $this);
     }
 
 }

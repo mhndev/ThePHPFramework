@@ -8,7 +8,8 @@
 
 namespace mhndev\router;
 
-use mhndev\ioc\Request;
+
+use mhndev\http\Request;
 
 class Router
 {

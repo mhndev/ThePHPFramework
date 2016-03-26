@@ -8,25 +8,19 @@ require_once 'vendor/autoload.php';
 
 $container = new \mhndev\ioc\Container();
 
+include "defaultServices.php";
 
-$defaultServices = include "defaultServices.php";
-
-foreach($defaultServices as $k => $v){
-    $container->set($k, $v, 'singleton');
-}
 
 /** @var \mhndev\http\Http $httpService */
 $httpService = $container->get('http');
 
-
 $request = $httpService->createRequestFromGlobals();
 
+
 /** @var \mhndev\http_kernel\Kernel $kernel */
-$kernel = $container->get('http-kernel');
+$kernel = $container->get('kernel');
 
-
-/** @var \mhndev\ioc\Response $response */
+/** @var \mhndev\http\Response $response */
 $response = $kernel->run($request);
-
 
 $response->send();

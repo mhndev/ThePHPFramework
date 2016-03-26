@@ -1,8 +1,19 @@
 <?php
 
-return [
-    'http'=> mhndev\http\Http::class,
-    'router'=>mhndev\router\Router::class,
-    'http_kernel'=>mhndev\http_kernel\Kernel::class,
-    'dispatcher'=>mhndev\dispatcher\Dispatcher::class,
-];
+$container->set('http', function($c){
+    return new \mhndev\http\Http();
+});
+
+
+$container->set('router', function($c){
+    return new mhndev\router\Router();
+});
+
+$container->set('dispatcher', function($c){
+    return new \mhndev\dispatcher\Dispatcher();
+});
+
+
+$container->set('kernel', function($c){
+    return new \mhndev\http_kernel\Kernel($c->get('router'), $c->get('dispatcher'));
+});
